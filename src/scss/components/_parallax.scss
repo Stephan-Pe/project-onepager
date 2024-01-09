@@ -1,0 +1,78 @@
+@use "../abstracts/colors" as *;
+
+.parallax {
+    position: relative;
+
+    &__image {
+        height: 60dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    &__text {
+
+        > div {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-rows: 1;
+            gap: 2rem;
+            padding: 2rem;
+        }
+    }
+
+    &__form {
+        width: min(80dvw, 900px);
+        margin: 2rem auto;
+    }
+
+    &__lead {
+        font-weight: 600;
+        font-size: clamp(1.8rem, 1.0863rem + 2.9281vw, 4.6rem);
+        text-shadow: 1px 1px 2px $box, 0 0 25px $gray, 0 0 5px $box;
+        color: $white;
+    }
+}
+
+#project {
+    background: url(/img/project/m_11.jpg);
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+}
+
+#location {
+    background: url(/img/project/m_11_vers1.jpg);
+    clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%);
+}
+
+#habitat {
+    background: url(/img/project/m_11_vers2.jpg);
+    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
+}
+
+// #plaene {
+//     background: url(/img/project/m_11_vers3.jpg);
+// }
+
+#project,
+#location,
+#habitat {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+section {}
+
+// #parallax-container {
+//     display: block;
+//     height: 900px;
+//     position: relative;
+//     /* Use relative positioning on the container */
+// }
+
+// #parallax-container section {
+//     height: 100%;
+// }

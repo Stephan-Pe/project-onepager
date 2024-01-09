@@ -1,0 +1,15 @@
+@use "../abstracts/colors" as *;
+
+.form {
+
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &__input,
+    &__textarea {
+        width: 100%;
+        border-bottom: 1px solid $box;
+    }
+}

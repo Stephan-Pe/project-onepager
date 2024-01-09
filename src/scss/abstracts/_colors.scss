@@ -1,0 +1,30 @@
+@forward 'sass:list';
+
+$gray: #5d5c61;
+$red: #D2386C;
+$darkBG: #0066b3;
+$white: #ffffff;
+$primetwo: #45b8ac;
+$compone: #ff6f61;
+$box: #111;
+$cardColor: #1b3770;
+$brown: #3C0909;
+$mimosa: #EFC050;
+$neongreen: #66ff33;
+
+$scheme-light: $box, $white;
+$scheme-card: $white, $darkBG;
+$scheme-gradient: $darkBG, $cardColor;
+$scheme-card-light: $white, $scheme-gradient;
+$scheme-card-contrast: $white, $cardColor;
+$scheme-detail: $white, $box;
+$scheme-dark: $mimosa, darken($primetwo, 10%);
+$btn-scheme: $red, $mimosa;
+
+.red {
+    background-color: rgba($compone, .9);
+}
+
+.green {
+    background-color: rgba($darkBG, .9);
+}

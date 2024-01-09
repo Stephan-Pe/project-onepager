@@ -1,0 +1,102 @@
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/colors" as *;
+
+//simple image slider
+.hero {
+
+  position: relative;
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 3;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 1.0863rem + 2.9281vw, 4.6rem);
+    color: $white;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100dvw;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 260px;
+  }
+}
+
+@include media('tablet') {
+  .hero {
+    &__wrapper {
+      height: 547px;
+    }
+  }
+}
+
+@include media('desktop') {
+  .hero {
+    &__wrapper {
+      height: 600px;
+    }
+  }
+}
+
+#goLeft {
+
+  left: 1rem;
+}
+
+#goRight {
+  right: 1rem;
+}
+
+.slider {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  transition: all 550ms ease;
+  object-fit: cover;
+  animation: fadeIn 550ms ease-in-out backwards;
+
+  &[data-active] {
+    opacity: 1;
+  }
+
+  > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.slide-Btn {
+  background-color: rgba($box, .1);
+  width: 40px;
+  padding: 0 .5rem;
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($box, .2);
+    outline: 1px solid $box;
+  }
+
+  svg {
+    fill: white;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      fill: lighten($gray, 35%);
+    }
+  }
+}
