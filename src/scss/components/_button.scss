@@ -1,0 +1,44 @@
+@use "../abstracts/colors" as *;
+
+.totop__btn {
+    outline: none;
+    display: grid;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba($neongreen, .8);
+    color: $white;
+    font-size: 3rem;
+    place-items: center;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 4rem;
+    right: 2rem;
+    transition: 350ms;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    outline: none;
+
+    &__link {
+        text-decoration: underline;
+    }
+
+    &__close {
+        font-size: 2rem;
+        background-color: red;
+        color: white;
+        aspect-ratio: 1;
+        width: 40px;
+        display: grid;
+        place-content: center;
+    }
+
+}

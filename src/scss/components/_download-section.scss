@@ -1,0 +1,33 @@
+@use "../abstracts/colors" as*;
+@use "../abstracts/breakpoints" as *;
+
+.download-section {
+    div {
+        padding: 1rem;
+    }
+
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    a {
+        justify-self: center;
+        margin: .5rem;
+    }
+}
+
+@include media('tablet') {
+    .download-section div {
+        grid-column: 1/-1;
+    }
+}
+
+@include media('desktop') {
+    .download-section {
+        padding: 3rem;
+
+        div {
+            grid-column: 1/-1;
+        }
+    }
+}

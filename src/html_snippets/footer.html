@@ -1,10 +1,38 @@
 <footer class="footer">
-
+  <button class="btn btn__link" id="impressumBtn">Impressum</button>
   <p>&copy; Setup with Gulp by Stephan Petersen</p>
 
 </footer>
 
+<script>
+  function smoothScroll(targetId, duration) {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const targetOffset = targetElement.offsetTop;
+      const initialOffset = window.pageYOffset;
+      const distance = targetOffset - initialOffset;
+      const startTime = performance.now();
 
+      function scrollStep(timestamp) {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easing = easeInOutQuad(progress);
+        window.scrollTo(0, initialOffset + distance * easing);
+
+        if (elapsed < duration) {
+          requestAnimationFrame(scrollStep);
+        }
+      }
+
+      function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      }
+
+      requestAnimationFrame(scrollStep);
+    }
+  }
+
+</script>
 <!-- build:js -->
 <script src="js/main-bundle.js"></script>
 <!-- endbuild -->
