@@ -24,10 +24,10 @@ export function imageSlider() {
         });
     });
 
-    // Automatically change slide every 5000 milliseconds (adjust as needed)
+    // Automatically change slide every 4500 milliseconds (adjust as needed)
     setInterval(() => {
         changeSlide(1); // Change to the next slide
-    }, 5000);
+    }, 4500);
 }
 
 // Call the imageSlider function after the DOM content is fully loaded
