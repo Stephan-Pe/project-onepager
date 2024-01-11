@@ -4,23 +4,20 @@
     position: relative;
 
     &__image {
-        height: 85dvh;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-
+        height: 100vh;
     }
 
     &__text {
-
-        > div {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            grid-template-rows: 1;
-            gap: 2rem;
-            padding: 2rem;
-        }
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-rows: 1;
+        gap: 2rem;
+        padding: 2rem;
     }
 
     &__form {
@@ -47,7 +44,7 @@
 }
 
 #habitat {
-    background: url(/img/project/m_11_vers2.jpg);
+    background: url(/img/project/m_11_vers3.jpg);
     clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -58,10 +55,13 @@
 #project,
 #location,
 #habitat {
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
 
 section {}
