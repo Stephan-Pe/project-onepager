@@ -34,17 +34,17 @@
 }
 
 #project {
-    background: url(/img/project/m_11.jpg);
+    background-image: url(/img/project/m_11.gif);
     clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
 }
 
 #location {
-    background: url(/img/project/m_11_vers1.jpg);
+    background-image: url(/img/project/m_11_vers1.gif);
     clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%);
 }
 
 #habitat {
-    background: url(/img/project/m_11_vers3.jpg);
+    background-image: url(/img/project/m_11_vers3.gif);
     clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -55,12 +55,15 @@
 #project,
 #location,
 #habitat {
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    // background-size: cover;
+    // position: relative;
     overflow: hidden;
 }
 

@@ -32,15 +32,15 @@
     }
   }
   document.addEventListener('DOMContentLoaded', function () {
-    var parallaxElements = document.querySelectorAll('.parallax__image, .parallax__text');
+    // var parallaxElements = document.querySelectorAll('.parallax__image, .parallax__text');
 
-    parallaxElements.forEach(function (element, index) {
-      window.addEventListener('scroll', function () {
-        var scroll = window.scrollY;
-        var speedMultiplier = index % 2 === 0 ? 0.2 : -0.2; // Adjust the speed for alternating elements
-        element.style.transform = 'translateY(' + (scroll * speedMultiplier) + 'px)';
-      });
-    });
+    // parallaxElements.forEach(function (element, index) {
+    //   window.addEventListener('scroll', function () {
+    //     var scroll = window.scrollY;
+    //     var speedMultiplier = index % 2 === 0 ? 0.2 : -0.2; // Adjust the speed for alternating elements
+    //     element.style.transform = 'translateY(' + (scroll * speedMultiplier) + 'px)';
+    //   });
+    // });
   });
 
 </script>
