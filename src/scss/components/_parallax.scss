@@ -1,18 +1,43 @@
 @use "../abstracts/colors" as *;
+@use "../abstracts/breakpoints" as *;
+
+#project {
+
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+}
+
+#location {
+
+    clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%);
+}
+
+#habitat {
+
+    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
+}
+
+
+
 
 .parallax {
-    position: relative;
 
     &__image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        height: 100vh;
+        position: relative;
+        height: 480px;
+        overflow: hidden;
+
+        img {
+            position: fixed;
+            width: 100% !important;
+            inset: 0;
+            object-fit: cover;
+            overflow: hidden;
+        }
     }
 
     &__text {
         overflow: hidden;
+        background-color: $white;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         grid-template-rows: 1;
@@ -21,51 +46,62 @@
     }
 
     &__form {
-        width: min(80dvw, 900px);
+        width: min(80dvw, 1080px);
         margin: 2rem auto;
+        background-color: $white;
+
+        &--heading {
+            line-height: 4;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
     }
 
     &__lead {
         font-weight: 600;
         font-size: clamp(1.8rem, 1.0863rem + 2.9281vw, 4.6rem);
-        text-shadow: 1px 1px 2px $box, 0 0 25px $gray, 0 0 5px $box;
+        font-size: clamp(2rem, 0.9804rem + 4.183vw, 6rem);
+        text-shadow: 0 0 5px black;
         color: $white;
+        position: fixed;
+        top: 30%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        justify-content: center;
+        z-index: 3;
+
     }
 }
 
-#project {
-    background-image: url(/img/project/m_11.gif);
-    clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+@include media('tablet') {
+    .parallax {
+        &__lead {
+            top: 35%;
+        }
+
+        &__image {
+            height: 95vh;
+        }
+    }
 }
 
-#location {
-    background-image: url(/img/project/m_11_vers1.gif);
-    clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%);
+@include media('desktop') {
+    .parallax {
+        &__lead {
+            top: 35%;
+        }
+
+        &__image {
+            height: 95vh;
+        }
+    }
 }
 
-#habitat {
-    background-image: url(/img/project/m_11_vers3.gif);
-    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
-}
 
-// #plaene {
-//     background: url(/img/project/m_11_vers3.jpg);
-// }
 
-#project,
-#location,
-#habitat {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    // background-size: cover;
-    // position: relative;
-    overflow: hidden;
-}
+
 
 section {}
 

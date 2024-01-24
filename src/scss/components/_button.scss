@@ -17,6 +17,11 @@
     right: 2rem;
     transition: 350ms;
 
+    svg {
+        fill: $white;
+        width: 80%;
+    }
+
     &.active {
         visibility: visible;
         opacity: 1;
@@ -39,6 +44,22 @@
         width: 40px;
         display: grid;
         place-content: center;
+    }
+
+    &__submit {
+        background-color: $darkBG;
+        display: grid;
+        place-content: center;
+        max-width: 300px;
+        padding: .5rem 1rem;
+        border-radius: 4px;
+        color: $white;
+
+        &:hover,
+        &:focus {
+            background-color: lighten($darkBG, 10%);
+        }
+
     }
 
 }

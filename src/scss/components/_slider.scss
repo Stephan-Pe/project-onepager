@@ -16,6 +16,7 @@
     font-weight: 600;
     font-size: clamp(1.8rem, 1.0863rem + 2.9281vw, 4.6rem);
     color: $white;
+    text-shadow: 0 0 5px black;
   }
 
   &__wrapper {

@@ -2,7 +2,6 @@ export function showImpressum() {
     const impressum = document.getElementById('impressum');
     let body = document.querySelector('body');
     body.addEventListener('click', (e) => {
-        console.log(e.target);
         if (e.target.matches('#impressumBtn')) {
 
             impressum.classList.toggle('active');
