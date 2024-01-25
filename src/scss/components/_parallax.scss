@@ -7,19 +7,24 @@
 }
 
 #location {
+    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
 
-    clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%);
 }
 
 #habitat {
+    clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%);
 
-    clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
 }
 
 
 
 
 .parallax {
+    &__teaser {
+        text-align: center;
+        font-size: clamp(1.4rem, 0.9922rem + 1.6732vw, 3rem);
+        margin: 2rem auto;
+    }
 
     &__image {
         position: relative;
@@ -39,21 +44,70 @@
         overflow: hidden;
         background-color: $white;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        grid-template-rows: 1;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
         gap: 2rem;
-        padding: 2rem;
+        padding: .5rem;
+
+        &--heading {
+            grid-column: 1/-1;
+            text-align: center;
+            font-size: clamp(1.8rem, 1.4941rem + 1.2549vw, 3rem);
+        }
+
+        p::first-letter {
+            font-weight: 600;
+        }
+
+        &--images {
+            margin: 2rem auto;
+            grid-column: 1/-1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            img {
+                width: 200px;
+                box-shadow: 0 0 5px black;
+            }
+        }
+
     }
 
     &__form {
-        width: min(80dvw, 1080px);
-        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 2rem;
         background-color: $white;
+        padding: 2rem 2rem 6rem;
 
         &--heading {
-            line-height: 4;
             font-weight: 600;
             margin-bottom: 1rem;
+        }
+
+        address {
+            line-height: 1.6;
+            margin-bottom: .5rem;
+
+            p {
+                margin-left: .5rem;
+            }
+
+
+        }
+
+        h3 {
+            font-weight: 600;
+            margin-bottom: .5rem;
+        }
+
+        a {
+            color: $gray;
+            line-height: 2;
+            margin-left: .5rem;
         }
     }
 
@@ -62,18 +116,31 @@
         font-size: clamp(1.8rem, 1.0863rem + 2.9281vw, 4.6rem);
         font-size: clamp(2rem, 0.9804rem + 4.183vw, 6rem);
         text-shadow: 0 0 5px black;
-        color: $white;
+        color: $compone;
         position: fixed;
         top: 30%;
+        transform: scale(0, 0);
+        opacity: 0;
         width: 100%;
         display: flex;
         align-items: center;
-
+        animation: zoomIn 1s ease forwards;
+        transition: transform 1s;
         justify-content: center;
         z-index: 3;
 
     }
 }
+
+@keyframes zoomIn {
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+
+}
+
+
 
 @include media('tablet') {
     .parallax {
@@ -82,10 +149,21 @@
         }
 
         &__image {
-            height: 95vh;
+            height: 95dvh;
+        }
+
+        &__text {
+            grid-template-columns: 1fr 1fr;
+
+            &--images {
+                flex-direction: row;
+                justify-content: space-around;
+            }
         }
     }
 }
+
+
 
 @include media('desktop') {
     .parallax {
@@ -95,6 +173,23 @@
 
         &__image {
             height: 95vh;
+        }
+
+        &__text {
+            grid-template-columns: 1fr 1fr;
+
+            &--images {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        &__form {
+            grid-template-columns: 30% 70%;
+
+            form {
+                max-width: 600px;
+            }
         }
     }
 }

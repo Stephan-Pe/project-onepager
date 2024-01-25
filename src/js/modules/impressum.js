@@ -6,7 +6,7 @@ export function showImpressum() {
 
             impressum.classList.toggle('active');
         }
-        if (e.target.matches('.btn__close')) {
+        if (e.target.matches('[data-btn-impressum]')) {
             impressum.classList.toggle('active');
         }
 

@@ -2,15 +2,25 @@ import { imageSlider } from "./modules/imageSlider.js";
 import { hamburger, mobileNavigation } from './modules/navigation.js';
 import { showToTopBtn } from "./modules/scrollTop.js";
 import { showImpressum } from "./modules/impressum.js";
+import { observer } from "./modules/observer.js";
+import { planComponent } from "./modules/planComponent.js";
 const container = document.querySelector('.container');
 const baseURI = window.location.origin + '/';
 const currentLocation = window.location.href;
 const homePageAnchor = document.getElementById('home');
 
 window.addEventListener('load', () => {
+    let itemsToObserve = document.querySelectorAll('.parallax__lead');
+    itemsToObserve.forEach(item => {
+        observer.observe(item);
+    });
 
     if (container) {
         imageSlider(); showImpressum();
+    }
+    if (container) {
+        planComponent();
+
     }
     // accessability page current
     if (currentLocation === baseURI) {

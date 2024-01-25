@@ -2,17 +2,21 @@
 @use "../abstracts/breakpoints" as *;
 
 .download-section {
-    div {
+    &__desc {
         padding: 1rem;
     }
 
+
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
-    a {
+    &__thumb {
         justify-self: center;
         margin: .5rem;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem;
     }
 }
 
@@ -26,8 +30,32 @@
     .download-section {
         padding: 3rem;
 
-        div {
+        &__desc {
             grid-column: 1/-1;
         }
+    }
+}
+
+.plan-card {
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    padding: 2rem;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    width: max(50dvw, 300px);
+    aspect-ratio: 1;
+    margin: auto;
+
+}
+
+.overlay-image {
+    display: grid;
+    gap: 1rem;
+    color: $white;
+    font-weight: 600;
+
+    img {
+        width: 80%;
+        margin: auto;
     }
 }
