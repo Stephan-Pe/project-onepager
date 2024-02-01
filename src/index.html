@@ -4,7 +4,7 @@
     <section class="parallax" id="home">
         <div class="parallax__image" id="project" role="region" aria-labelledby="project-heading">
 
-            <h1 class="parallax__lead" id="project-heading" data-delay="0.2s">Projekt Section</h1>
+            <h1 class="parallax__lead" id="project-heading" data-delay="0.2s">Projekt Seite</h1>
             <picture>
                 <source media="(orientation: landscape)" srcset="/img/project/m_11_fullhd.jpg">
                 <source media="(orientation: portrait)" srcset="/img/project/m_11_mobile.jpg">
@@ -100,7 +100,7 @@
     <h2 class="parallax__teaser">Für weitere Informationen stehen wir Ihnen gerne zur Verfügung</h2>
     <section class="parallax__form" id="contact">
 
-        <div>
+        <div class="parallax__form--address">
             <h2 class="parallax__form--heading">Kontakt</h2>
             <address>
                 <h3>Adresse</h3>
@@ -112,23 +112,38 @@
             <a href="mailto:siteart@feritel.swiss">email@verkauf.test</a><br>
             <h3>Telefon</h3>
             <a href="tel:+41813562019">+41 123 45 67</a>
+            <img src="/img/logo/logo.png" alt="logo">
         </div>
         <div>
-            <form class="form" action="#" method="post">
-                <div class="form__group"> <label class="form__label" for="name">Name:</label>
-                    <input class="form__input" type="text" id="name" name="name" required aria-required="true">
+            <form class="form" id="contactForm" action="/_wlscripts/formmail.asp" method=POST name="formular" accept-charset="utf-8">
+                <div class="form__group"> <label class="form__label" for="Name">Name:</label>
+                    <input class="form__input" type="text" id="name" name="Name" required aria-required="true">
+                    <input type=hidden name="subject" value="Kontaktformular">
+                    <input type=hidden name="recipient" value="admin/at/feritel.swiss">
+                    <input type=hidden name="redirect" value="/thankyou.html">
+                    <input type=hidden name="charset" value="utf-8">
                 </div>
                 <div class="form__group"> <label class="form__label" for="email">Email:</label>
-                    <input class="form__input" type="email" id="email" name="email" required aria-required="true">
+                    <input class="form__input" type="text" id="email" name="email" size="35" required aria-required="true">
                 </div>
                 <div class="form__group"> <label class="form__label" for="betreff">Betreff:</label>
                     <input class="form__input" type="text" id="betreff" name="betreff" required aria-required="true">
                 </div>
-                <div class="form__group"> <label class="form__label" for="message">Nachricht:</label>
-                    <textarea class="form__textarea" id="message" name="message" rows="4" required aria-required="true"></textarea>
+                <div class="form__group"> <label class="form__label" for="Bemerkungen">Nachricht:</label>
+                    <textarea class="form__textarea" id="message" name="Bemerkungen" rows="4" required aria-required="true"></textarea>
                 </div>
+                <div class="form__group">
+                    <p>Bitte geben Sie hier den SicherheitsCode ein:</p>
+                    <input type="text" size="35" name="SicherheitsCode">
+                </div>
+
+                <div class="form__group">
+                    <div><img src="/_wlscripts/SicherheitsImage.asp"></div>
+                </div>
+
                 <div class="form__group grid-center">
-                    <button class="btn btn__submit" type="submit">Senden</button>
+                    <input class="btn btn__submit" type="submit" name="Submit" value="Senden">
+
                 </div>
             </form>
         </div>

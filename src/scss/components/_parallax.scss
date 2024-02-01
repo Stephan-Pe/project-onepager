@@ -1,4 +1,5 @@
 @use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
 @use "../abstracts/breakpoints" as *;
 
 #project {
@@ -31,6 +32,7 @@
         height: 480px;
         overflow: hidden;
 
+
         img {
             position: fixed;
             width: 100% !important;
@@ -42,7 +44,7 @@
 
     &__text {
         overflow: hidden;
-        background-color: $white;
+        @include color-scheme($scheme-light...);
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -52,11 +54,14 @@
         &--heading {
             grid-column: 1/-1;
             text-align: center;
+            color: $clr_dark;
+            font-weight: 600;
             font-size: clamp(1.8rem, 1.4941rem + 1.2549vw, 3rem);
         }
 
         p::first-letter {
             font-weight: 600;
+            color: $clr_light;
         }
 
         &--images {
@@ -81,14 +86,17 @@
         grid-template-rows: auto;
         gap: 2rem;
         background-color: $white;
-        padding: 2rem 2rem 6rem;
+        padding: 4rem 2rem 6rem;
 
         &--heading {
             font-weight: 600;
             margin-bottom: 1rem;
         }
 
-        address {
+        @include color-scheme($scheme-dark...);
+
+        &--address {
+
             line-height: 1.6;
             margin-bottom: .5rem;
 
@@ -96,6 +104,10 @@
                 margin-left: .5rem;
             }
 
+            img {
+                margin-top: 3rem;
+                width: min(300px, 80%);
+            }
 
         }
 
@@ -105,36 +117,50 @@
         }
 
         a {
-            color: $gray;
+            color: $clr_dark;
             line-height: 2;
             margin-left: .5rem;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+                color: $clr_dark;
+            }
         }
     }
 
     &__lead {
         font-weight: 600;
-        font-size: clamp(1.8rem, 1.0863rem + 2.9281vw, 4.6rem);
-        font-size: clamp(2rem, 0.9804rem + 4.183vw, 6rem);
+
+        font-size: clamp(1.6rem, 0.7333rem + 3.5556vw, 5rem);
         text-shadow: 0 0 5px black;
-        color: $compone;
+        color: $gold;
         position: fixed;
         top: 30%;
-        transform: scale(0, 0);
+        left: 50%;
         opacity: 0;
-        width: 100%;
-        display: flex;
-        align-items: center;
+        transform: scale(0, 0)translateX(-50%);
+        transform-origin: left;
+
         animation: zoomIn 1s ease forwards;
         transition: transform 1s;
-        justify-content: center;
+
         z-index: 3;
+
+        &::after {
+            content: '';
+            width: 100%;
+            display: block;
+            height: 2px;
+            background-color: $gold;
+        }
 
     }
 }
 
 @keyframes zoomIn {
     to {
-        transform: scale(1, 1);
+        transform: scale(1.5, 1.5)translateX(-50%);
         opacity: 1;
     }
 
@@ -186,6 +212,10 @@
 
         &__form {
             grid-template-columns: 30% 70%;
+
+            &--address {
+                margin-left: 3rem;
+            }
 
             form {
                 max-width: 600px;

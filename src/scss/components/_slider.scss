@@ -75,7 +75,7 @@
 }
 
 .slide-Btn {
-  background-color: rgba($box, .1);
+  background-color: rgba($clr_dark, .1);
   width: 40px;
   padding: 0 .5rem;
   outline: none;
@@ -87,8 +87,8 @@
 
   &:hover,
   &:focus {
-    background-color: rgba($box, .2);
-    outline: 1px solid $box;
+    background-color: rgba($clr_dark, .2);
+    outline: 1px solid $clr_dark;
   }
 
   svg {
@@ -97,7 +97,7 @@
 
     &:hover,
     &:focus {
-      fill: lighten($gray, 35%);
+      fill: lighten($clr_dark, 35%);
     }
   }
 }

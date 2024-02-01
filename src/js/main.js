@@ -4,6 +4,8 @@ import { showToTopBtn } from "./modules/scrollTop.js";
 import { showImpressum } from "./modules/impressum.js";
 import { observer } from "./modules/observer.js";
 import { planComponent } from "./modules/planComponent.js";
+import { createTitel } from "./modules/sitetitle.js";
+
 const container = document.querySelector('.container');
 const baseURI = window.location.origin + '/';
 const currentLocation = window.location.href;
@@ -14,7 +16,7 @@ window.addEventListener('load', () => {
     itemsToObserve.forEach(item => {
         observer.observe(item);
     });
-
+    createTitel();
     if (container) {
         imageSlider(); showImpressum();
     }

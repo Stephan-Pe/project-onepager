@@ -1,7 +1,7 @@
 @use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
 
 .form {
-
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,13 @@
 
     &__input,
     &__textarea {
+        outline: none;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        background-color: $clr_dark;
         width: 100%;
-        border-bottom: 1px solid $box;
+        border-bottom: 1px solid $clr_acc;
+        color: $clr_acc;
     }
 }

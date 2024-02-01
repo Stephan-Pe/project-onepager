@@ -1,11 +1,13 @@
 @use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
 
 .totop__btn {
     outline: none;
     display: grid;
     visibility: hidden;
     opacity: 0;
-    background-color: rgba($neongreen, .8);
+    background-color: rgba($clr_light, .8);
+    border: 1px solid $white;
     color: $white;
     font-size: 3rem;
     place-items: center;
@@ -31,6 +33,8 @@
 .btn {
     cursor: pointer;
     outline: none;
+    background-color: transparent;
+    border: none;
 
     &__link {
         text-decoration: underline;
@@ -49,17 +53,17 @@
     }
 
     &__submit {
-        background-color: $darkBG;
+        @include color-scheme($scheme-light...);
         display: grid;
         place-content: center;
         max-width: 300px;
         padding: .5rem 1rem;
         border-radius: 4px;
-        color: $white;
+
 
         &:hover,
         &:focus {
-            background-color: lighten($darkBG, 10%);
+            background-color: lighten($clr_acc, 10%);
         }
 
     }

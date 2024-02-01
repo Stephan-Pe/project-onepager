@@ -9,3 +9,11 @@
     display: grid;
     place-items: center;
 }
+
+.wrapper {
+    display: grid;
+    min-height: 50dvw;
+    text-align: center;
+    place-content: center;
+    gap: 1rem;
+}

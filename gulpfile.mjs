@@ -1,7 +1,7 @@
 import gulp from "gulp";
 import eslint from "gulp-eslint";
 
-const { series, parallel, watch, src, dest, task } = gulp;
+const { series, parallel, watch, task } = gulp;
 
 // import gulpIf from "gulp-if"; /* for later usage */
 
@@ -16,6 +16,7 @@ import processHTML from "./gulp_modules/gulpProcessHTML.js";
 import processCSS from "./gulp_modules/gulpProcessCSS.js";
 import processJS from "./gulp_modules/gulpProcessJS.js";
 import processJson from "./gulp_modules/gulpProcessJSON.js";
+
 
 // The lint task
 gulp.task("eslint", function () {
