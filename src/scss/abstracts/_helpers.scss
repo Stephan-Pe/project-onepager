@@ -1,7 +1,7 @@
 @use "../abstracts/colors" as *;
 
 .thumbnail {
-    width: min(80px, 160px);
+    width: min(40vw, 200px);
     box-shadow: 3px 3px 1px -1px #020005;
 }
 

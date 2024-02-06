@@ -3,22 +3,56 @@
     {
       "id": 1,
       "image": "/img/plaene/PlanA.jpg",
-      "title": "Plan A"
+      "title": "Wohnung A",
+      "rooms": 6,
+      "size": 200,
+      "description": "Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.",
+      "status": 0
     },
     {
       "id": 2,
       "image": "/img/plaene/PlanB.jpg",
-      "title": "Plan B"
+      "title": "Wohnung B",
+      "rooms": 5.5,
+      "size": 175,
+      "description": "Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.",
+      "status": 0
     },
     {
       "id": 3,
       "image": "/img/plaene/PlanA.jpg",
-      "title": "Plan A"
+      "title": "Wohnung C",
+      "rooms": 4.5,
+      "size": 140,
+      "description": "Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.",
+      "status": 0
     },
     {
       "id": 4,
       "image": "/img/plaene/PlanB.jpg",
-      "title": "Plan B"
+      "title": "Wohnung D",
+      "rooms": 4.5,
+      "size": 130,
+      "description": "Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.",
+      "status": 1
+    },
+    {
+      "id": 5,
+      "image": "/img/plaene/PlanA.jpg",
+      "title": "Wohnung E",
+      "rooms": 4.5,
+      "size": 140,
+      "description": "Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.",
+      "status": 0
+    },
+    {
+      "id": 6,
+      "image": "/img/plaene/PlanB.jpg",
+      "title": "Wohnung F",
+      "rooms": 5.5,
+      "size": 170,
+      "description": "Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.",
+      "status": 1
     }
   ]
 }
